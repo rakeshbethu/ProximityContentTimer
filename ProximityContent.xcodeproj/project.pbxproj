@@ -21,6 +21,8 @@
 		AECF16681B0E0B1000CC83B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECF16671B0E0B1000CC83B2 /* Assets.xcassets */; };
 		AEFD99541BC5948700BC1771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEFD99521BC5948700BC1771 /* LaunchScreen.storyboard */; };
 		D740A5981DAC388A00AC06C4 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D740A5971DAC388A00AC06C4 /* EstimoteSDK.framework */; };
+		D740A59C1DAD312D00AC06C4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */; };
+		D740A59E1DAD417C00AC06C4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740A59D1DAD417C00AC06C4 /* CustomCell.swift */; };
 		D7E5219D1DAC2E4C008D188B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E5219C1DAC2E4C008D188B /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		AECF16801B0E0B2F00CC83B2 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		AEFD99531BC5948700BC1771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D740A5971DAC388A00AC06C4 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = ../ActivityViewController.swift; sourceTree = "<group>"; };
+		D740A59D1DAD417C00AC06C4 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D7E5219B1DAC2D48008D188B /* ProximityContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ProximityContent.entitlements; sourceTree = "<group>"; };
 		D7E5219C1DAC2E4C008D188B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -98,7 +102,9 @@
 				D7E5219B1DAC2D48008D188B /* ProximityContent.entitlements */,
 				AECF16601B0E0B1000CC83B2 /* AppDelegate.swift */,
 				AECF16621B0E0B1000CC83B2 /* ViewController.swift */,
+				D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */,
 				AECF16641B0E0B1000CC83B2 /* Main.storyboard */,
+				D740A59D1DAD417C00AC06C4 /* CustomCell.swift */,
 				AECF16671B0E0B1000CC83B2 /* Assets.xcassets */,
 				AEFD99521BC5948700BC1771 /* LaunchScreen.storyboard */,
 				AECF165F1B0E0B1000CC83B2 /* Info.plist */,
@@ -213,6 +219,8 @@
 				AECA380F1B8F2758009A9324 /* BeaconDetailsCloudFactory.swift in Sources */,
 				AE9764491C2037AA0058A4DC /* BeaconDetails.swift in Sources */,
 				AE9764471C2037730058A4DC /* BeaconDetailsStaticFactory.swift in Sources */,
+				D740A59E1DAD417C00AC06C4 /* CustomCell.swift in Sources */,
+				D740A59C1DAD312D00AC06C4 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
