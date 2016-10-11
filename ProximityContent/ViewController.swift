@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController, ProximityContentManagerDelegate {
 
@@ -11,8 +12,15 @@ class ViewController: UIViewController, ProximityContentManagerDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var proximityContentManager: ProximityContentManager!
-    var time = NSDate()
-
+    var displayTime = ""
+    var time = ""
+    var StartTime = ""
+    var estimoteBeaconName = ""
+var printString = ""
+    //cloudkit
+    let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,9 +52,9 @@ class ViewController: UIViewController, ProximityContentManagerDelegate {
               stop()
             }
             start()
+            estimoteBeaconName = beaconName
             updateTime()
             self.image.hidden = false
-            
             
             
         } else {
@@ -63,28 +71,58 @@ class ViewController: UIViewController, ProximityContentManagerDelegate {
 //TIMER
     @IBOutlet var displayTimeLabel: UILabel!
     
-    var startTime = NSTimeInterval()
-    
-    var timer:NSTimer = NSTimer()
+  var startingTime = NSTimeInterval()
+   var timer:NSTimer = NSTimer()
+   
   
-    
+//function START
   func start() {
         if (!timer.valid) {
-            let aSelector : Selector = "updateTime"
+            let aSelector : Selector = #selector(ViewController.updateTime)
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+            startingTime = NSDate.timeIntervalSinceReferenceDate()
+            let todaysDate:NSDate = NSDate()
+            let dateFormatter:NSDateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+            let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
+            StartTime = DateInFormat
+
         }
     }
-    
+//Function STOP
    func stop() {
-        timer.invalidate()
-    }
+    time = displayTime
+    timer.invalidate()
+    updateCLoudKit()
+
     
+//    let predicate = NSPredicate(value: true)
+//    let query = CKQuery(recordType: "ProximityTime", predicate: predicate)
+//    var record:CKRecord = CKRecord(recordType: "ProximityTime")
+//    
+//    
+//    publicDatabase.performQuery(query, inZoneWithID: nil) { (records, error) in
+//        if(error == nil){
+//            for record in records!{
+//                var bName = record["BeaconName"]
+//                var printStartTime = record["StartTime"]
+//                var printTime = record["Time"]
+//                
+//                
+//                print("This is \(bName),  ,\(printStartTime), ,\(printTime) ")
+//            }
+//            }
+//        }
+
+    }
+
+//Func UpdateTIME
     func updateTime() {
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
+        //Calculate elapsed Time
         //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: NSTimeInterval = currentTime - startingTime
         
         //calculate the minutes in elapsed time.
         let minutes = UInt8(elapsedTime / 60.0)
@@ -105,8 +143,28 @@ class ViewController: UIViewController, ProximityContentManagerDelegate {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         displayTimeLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        displayTime = "\(strMinutes):\(strSeconds):\(strFraction)"
     }
+    
 
+
+//function to update in cloudKit
+    func updateCLoudKit(){
+           let recordType = CKRecord(recordType: "ProximityTime")
+        recordType["BeaconName"] = estimoteBeaconName
+        recordType["StartTime"] = StartTime
+        recordType["Time"] = time
+//        printString += estimoteBeaconName + " " + StartTime + " " + time + " "
+//        print(printString)
+//        printString = ""
+        publicDatabase.saveRecord(recordType) { (record, error) in
+            if(error == nil){
+                print("User Saved")
+            } else{
+                print(error?.localizedDescription)
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
