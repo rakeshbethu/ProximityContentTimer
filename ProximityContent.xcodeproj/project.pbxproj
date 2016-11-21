@@ -23,6 +23,9 @@
 		D740A5981DAC388A00AC06C4 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D740A5971DAC388A00AC06C4 /* EstimoteSDK.framework */; };
 		D740A59C1DAD312D00AC06C4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */; };
 		D740A59E1DAD417C00AC06C4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740A59D1DAD417C00AC06C4 /* CustomCell.swift */; };
+		D75C88841DAD75A700378840 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C88821DAD75A700378840 /* CreateAccountVC.swift */; };
+		D75C88851DAD75A700378840 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C88831DAD75A700378840 /* LoginVC.swift */; };
+		D75C88881DAD93A100378840 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C88871DAD93A100378840 /* SignUpVC.swift */; };
 		D7E5219D1DAC2E4C008D188B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E5219C1DAC2E4C008D188B /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		D740A5971DAC388A00AC06C4 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = ../ActivityViewController.swift; sourceTree = "<group>"; };
 		D740A59D1DAD417C00AC06C4 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		D75C88821DAD75A700378840 /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		D75C88831DAD75A700378840 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D75C88871DAD93A100378840 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		D7E5219B1DAC2D48008D188B /* ProximityContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ProximityContent.entitlements; sourceTree = "<group>"; };
 		D7E5219C1DAC2E4C008D188B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -104,14 +110,25 @@
 				AECF16621B0E0B1000CC83B2 /* ViewController.swift */,
 				D740A59B1DAD312D00AC06C4 /* ActivityViewController.swift */,
 				AECF16641B0E0B1000CC83B2 /* Main.storyboard */,
+				D75C88871DAD93A100378840 /* SignUpVC.swift */,
 				D740A59D1DAD417C00AC06C4 /* CustomCell.swift */,
 				AECF16671B0E0B1000CC83B2 /* Assets.xcassets */,
 				AEFD99521BC5948700BC1771 /* LaunchScreen.storyboard */,
 				AECF165F1B0E0B1000CC83B2 /* Info.plist */,
 				AECF16801B0E0B2F00CC83B2 /* ObjCBridge.h */,
+				D75C88861DAD8F4F00378840 /* scraptchpad */,
 				AECA38101B904D2A009A9324 /* Estimote */,
 			);
 			path = ProximityContent;
+			sourceTree = "<group>";
+		};
+		D75C88861DAD8F4F00378840 /* scraptchpad */ = {
+			isa = PBXGroup;
+			children = (
+				D75C88821DAD75A700378840 /* CreateAccountVC.swift */,
+				D75C88831DAD75A700378840 /* LoginVC.swift */,
+			);
+			name = scraptchpad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AECA38361B948BCE009A9324 /* BeaconContentFactory.swift in Sources */,
+				D75C88841DAD75A700378840 /* CreateAccountVC.swift in Sources */,
+				D75C88851DAD75A700378840 /* LoginVC.swift in Sources */,
 				AECA38201B908E60009A9324 /* ProximityContentManager.swift in Sources */,
 				AECF16631B0E0B1000CC83B2 /* ViewController.swift in Sources */,
 				AECA381C1B907836009A9324 /* CachingContentFactory.swift in Sources */,
@@ -220,6 +239,7 @@
 				AE9764491C2037AA0058A4DC /* BeaconDetails.swift in Sources */,
 				AE9764471C2037730058A4DC /* BeaconDetailsStaticFactory.swift in Sources */,
 				D740A59E1DAD417C00AC06C4 /* CustomCell.swift in Sources */,
+				D75C88881DAD93A100378840 /* SignUpVC.swift in Sources */,
 				D740A59C1DAD312D00AC06C4 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

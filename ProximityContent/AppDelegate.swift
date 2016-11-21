@@ -8,7 +8,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
-
+    var message:String = ""
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
        ESTConfig.setupAppID("ams-s-app1-49c", andAppToken: "ae410391053e2b842d7c7204d2133d45")
 

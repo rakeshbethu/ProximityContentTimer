@@ -41,18 +41,7 @@ class ActivityViewController: UITableViewController {
         tasks = [CKRecord]()
         
         let publicData = CKContainer.defaultContainer().publicCloudDatabase
-        let query = CKQuery(recordType: "ProximityTime", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)
-        ]
-        publicData.performQuery(query, inZoneWithID: nil) { (results:[CKRecord]?, error:NSError?) -> Void in
-            if let tasks = results {
-                self.tasks = tasks
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                    self.refresh.endRefreshing()
-                })
-            }
-        }
+       
         
         
         
